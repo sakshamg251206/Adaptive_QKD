@@ -1,0 +1,18 @@
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Task & IDE logs
+*.log
+.system_generated/
