@@ -9,33 +9,36 @@ This project integrates a **Qiskit-based BB84 simulation engine**, a **10,000+ s
 
 ```mermaid
 flowchart TD
-    subgraph Layer 1: Quantum Simulation Engine [Qiskit & Vectorized Engine]
-        Alice[Alice Qubit & Basis Generator] --> Channel[Quantum Channel]
-        Noise[Depolarizing Channel Noise p_noise] --> Channel
-        Eve[Eavesdropper: Intercept-Resend / PNS] --> Channel
-        Channel --> Bob[Bob Basis Sifting & Measurement]
+    subgraph L1["Layer 1: Quantum Simulation Engine (Qiskit & Vectorized)"]
+        Alice["Alice Qubit & Basis Generator"] --> Channel["Quantum Channel"]
+        Noise["Depolarizing Channel Noise p_noise"] --> Channel
+        Eve["Eavesdropper: Intercept-Resend / PNS"] --> Channel
+        Channel --> Bob["Bob Basis Sifting & Measurement"]
     end
 
-    subgraph Layer 2: Feature Extraction & Streaming
-        Bob --> Streamer[Checkpoint Collector]
+    subgraph L2["Layer 2: Feature Extraction & Streaming"]
+        Bob --> Streamer["Checkpoint Collector"]
         Streamer --> FeatVec["Feature Vector (QBER, Std QBER, Sifting Ratio, Timing Jitter, Q(t))"]
     end
 
-    subgraph Layer 3: Machine Learning Threat Classifiers
-        FeatVec --> RF[Random Forest Classifier]
-        FeatVec --> LSTM[PyTorch LSTM Sequence Model]
-        RF & LSTM --> Engine[Classifier Engine (P_attack & Threat Class)]
+    subgraph L3["Layer 3: Machine Learning Threat Classifiers"]
+        FeatVec --> RF["Random Forest Classifier"]
+        FeatVec --> LSTM["PyTorch LSTM Sequence Model"]
+        RF --> Engine["Classifier Engine (P_attack & Threat Class)"]
+        LSTM --> Engine
     end
 
-    subgraph Layer 4: Closed-Loop Adaptive Control Policy
-        Engine --> Evaluator{Risk Evaluator}
+    subgraph L4["Layer 4: Closed-Loop Adaptive Control Policy"]
+        Engine --> Evaluator{"Risk Evaluator"}
         Evaluator -- "P_attack < 0.25" --> CONTINUE["CONTINUE (Standard Privacy Amplification)"]
         Evaluator -- "0.25 <= P_attack < 0.70" --> HARDEN["HARDEN (Aggressive PA Compression)"]
         Evaluator -- "P_attack >= 0.70" --> ABORT["ABORT (Immediate Session Termination)"]
     end
 
-    subgraph Layer 5: UI & Analytics
-        CONTINUE & HARDEN & ABORT --> StreamlitApp[Streamlit Interactive Dashboard]
+    subgraph L5["Layer 5: UI & Analytics"]
+        CONTINUE --> StreamlitApp["Streamlit Interactive Dashboard"]
+        HARDEN --> StreamlitApp
+        ABORT --> StreamlitApp
     end
 ```
 
