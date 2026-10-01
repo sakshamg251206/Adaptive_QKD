@@ -1,0 +1,12 @@
+[theme]
+primaryColor = "#0f766e"
+font = "sans serif"
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
