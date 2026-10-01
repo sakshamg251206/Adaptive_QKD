@@ -1,0 +1,19 @@
+scenario,policy,mean_qber,key_rate,secure_key_rate,abort_rate,harden_rate,unsafe_rate
+Clean channel,No defence,0.0,0.3738,0.3738,0.0,0.0,0.0
+Clean channel,QBER threshold,0.0,0.3738,0.3738,0.0,0.0,0.0
+Clean channel,Adaptive (ML),0.0,0.3738,0.3738,0.0,0.0,0.0
+Moderate noise (p=0.06),No defence,0.029072266429397656,0.22893999999999998,0.22893999999999998,0.0,0.0,0.0
+Moderate noise (p=0.06),QBER threshold,0.029072266429397656,0.21844999999999998,0.21844999999999998,0.085,0.0,0.0
+Moderate noise (p=0.06),Adaptive (ML),0.029072266429397656,0.18796500000000002,0.18796500000000002,0.005,0.24,0.0
+High noise (p=0.14),No defence,0.06912127450622778,0.09652,0.09652,0.0,0.0,0.0
+High noise (p=0.14),QBER threshold,0.06912127450622778,0.041105,0.041105,0.78,0.0,0.0
+High noise (p=0.14),Adaptive (ML),0.06912127450622778,0.017065,0.017065,0.325,0.59,0.0
+Intercept-resend (50%),No defence,0.12385528176008942,0.010805,0.010805,0.0,0.0,0.0
+Intercept-resend (50%),QBER threshold,0.12385528176008942,0.0008100000000000001,0.0008100000000000001,0.995,0.0,0.0
+Intercept-resend (50%),Adaptive (ML),0.12385528176008942,0.000445,0.000445,0.975,0.02,0.0
+PNS attack (40%),No defence,0.0,0.336935,0.0,0.0,0.0,1.0
+PNS attack (40%),QBER threshold,0.0,0.336935,0.0,0.0,0.0,1.0
+PNS attack (40%),Adaptive (ML),0.0,0.0,0.0,1.0,0.0,0.0
+"Noise + intercept (p=0.06, 30%)",No defence,0.10174580993093447,0.028530000000000003,0.028530000000000003,0.0,0.0,0.0
+"Noise + intercept (p=0.06, 30%)",QBER threshold,0.10174580993093447,0.005685,0.005685,0.965,0.0,0.0
+"Noise + intercept (p=0.06, 30%)",Adaptive (ML),0.10174580993093447,0.001815,0.001815,0.82,0.17,0.0

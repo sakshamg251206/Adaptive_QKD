@@ -1,0 +1,183 @@
+{
+  "train_size": 8000,
+  "test_size": 2000,
+  "models": [
+    {
+      "name": "Random Forest (session features)",
+      "accuracy": 0.8005,
+      "macro_f1": 0.7882891893887185,
+      "binary_roc_auc": 0.9825395833333332,
+      "per_class": {
+        "clean": {
+          "precision": 0.9521531100478469,
+          "recall": 0.995,
+          "f1-score": 0.9731051344743277,
+          "support": 400.0
+        },
+        "noise_only": {
+          "precision": 0.7213114754098361,
+          "recall": 0.88,
+          "f1-score": 0.7927927927927928,
+          "support": 400.0
+        },
+        "intercept_resend": {
+          "precision": 0.5861386138613861,
+          "recall": 0.74,
+          "f1-score": 0.6541436464088398,
+          "support": 400.0
+        },
+        "pns": {
+          "precision": 0.9615384615384616,
+          "recall": 1.0,
+          "f1-score": 0.9803921568627451,
+          "support": 400.0
+        },
+        "noise+attack": {
+          "precision": 0.8959537572254336,
+          "recall": 0.3875,
+          "f1-score": 0.5410122164048866,
+          "support": 400.0
+        }
+      },
+      "confusion": [
+        [
+          398,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          352,
+          23,
+          0,
+          5
+        ],
+        [
+          0,
+          91,
+          296,
+          0,
+          13
+        ],
+        [
+          0,
+          0,
+          0,
+          400,
+          0
+        ],
+        [
+          0,
+          43,
+          186,
+          16,
+          155
+        ]
+      ]
+    },
+    {
+      "name": "LSTM (QBER sequence only)",
+      "accuracy": 0.5165,
+      "macro_f1": 0.38771334860322443,
+      "binary_roc_auc": 0.7202697916666667,
+      "per_class": {
+        "clean": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 400.0
+        },
+        "noise_only": {
+          "precision": 0.5380952380952381,
+          "recall": 0.8475,
+          "f1-score": 0.658252427184466,
+          "support": 400.0
+        },
+        "intercept_resend": {
+          "precision": 0.5632183908045977,
+          "recall": 0.735,
+          "f1-score": 0.6377440347071583,
+          "support": 400.0
+        },
+        "pns": {
+          "precision": 0.47337278106508873,
+          "recall": 1.0,
+          "f1-score": 0.642570281124498,
+          "support": 400.0
+        },
+        "noise+attack": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 400.0
+        }
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0,
+          400,
+          0
+        ],
+        [
+          0,
+          339,
+          32,
+          28,
+          1
+        ],
+        [
+          0,
+          103,
+          294,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          400,
+          0
+        ],
+        [
+          0,
+          188,
+          196,
+          16,
+          0
+        ]
+      ]
+    }
+  ],
+  "feature_importance": {
+    "timing_jitter_ns": 0.3750325393671992,
+    "qber": 0.1689544853228898,
+    "sifting_ratio": 0.1600043177546793,
+    "qber_std": 0.1380310338090588,
+    "qber_max": 0.10735922794709506,
+    "basis_mismatch_rate": 0.0493319712779157,
+    "qber_min": 0.0012864245211622542
+  },
+  "by_progress": {
+    "0.25": {
+      "accuracy": 0.7115,
+      "binary_roc_auc": 0.9795645833333333
+    },
+    "0.50": {
+      "accuracy": 0.7665,
+      "binary_roc_auc": 0.9815406249999999
+    },
+    "0.75": {
+      "accuracy": 0.7845,
+      "binary_roc_auc": 0.9833020833333332
+    },
+    "1.00": {
+      "accuracy": 0.8005,
+      "binary_roc_auc": 0.9825395833333332
+    }
+  }
+}
