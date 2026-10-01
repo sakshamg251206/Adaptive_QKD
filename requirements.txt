@@ -1,0 +1,3 @@
+# Used by Streamlit Community Cloud and other hosts that install from requirements.txt.
+# For local development use: pip install -e ".[dev,dashboard,quantum,lstm]"
+.[dashboard]
